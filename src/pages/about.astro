@@ -16,6 +16,8 @@ const skills = ["HTML", "CSS", "JavaScript", "Django", "Astro", "Computer Fundam
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -28,12 +30,12 @@ const goal = 3;
         <h3>... and my new Astro site!</h3>
         <!-- Facts -->
         <p>Here are a few facts about me:</p>
-		<ul>
-		<li>My name is {identity.firstName}.</li>
-		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-		{identity.hobbies.length >= 2 && 
-			<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-		} 
+		<ul class="me">
+			<li>My name is {identity.firstName}.</li>
+			<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+			{identity.hobbies.length >= 2 && 
+				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+			} 
 		</ul>
 		<!-- Skills -->
 		<p>My skills are:</p>
@@ -51,7 +53,7 @@ const goal = 3;
 </Layout>
 
 
-<style>
+<style define:vars={{skillColor}}>
 	main {
 		margin: auto;
 		padding: 1.5rem;
@@ -61,9 +63,14 @@ const goal = 3;
         color: purple;
         font-size: 4rem;
       }
+	.me {
+		color: green;
+		font-weight: bold;
+	}
 	.skill {
-   color: green;
-   font-weight: bold;
+		/* color: green; */
+		color: var(--skillColor);
+		font-weight: bold;
  	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
