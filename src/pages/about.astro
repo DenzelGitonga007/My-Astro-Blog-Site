@@ -26,7 +26,7 @@ const goal = 3;
         <h1>My Astro Site</h1>
         <h2>{pageTitle}</h2>
         <h3>... and my new Astro site!</h3>
-        
+        <!-- Facts -->
         <p>Here are a few facts about me:</p>
 		<ul>
 		<li>My name is {identity.firstName}.</li>
@@ -35,11 +35,21 @@ const goal = 3;
 			<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
 		} 
 		</ul>
+		<!-- Skills -->
 		<p>My skills are:</p>
 		<ul>
-		{skills.map((skill) => <li>{skill}</li>)}
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+
+		<!-- Feelings -->
+		{happy && <p>I am happy to be learning Astro!</p>}
+
+		{finished && <p>I finished this tutorial!</p>}
+
+		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
 	</main>
 </Layout>
+
 
 <style>
 	main {
@@ -48,10 +58,13 @@ const goal = 3;
 		max-width: 60ch;
 	}
 	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
+        color: purple;
+        font-size: 4rem;
+      }
+	.skill {
+   color: green;
+   font-weight: bold;
+ 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
