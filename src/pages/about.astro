@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+// CSS
 import '../styles/global.css';
+// Navigation menu
+import Navigation from '../components/Navigation.astro';
 
 const pageTitle = "About Me";
 
@@ -23,9 +26,7 @@ const skillColor = "navy";
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+		<Navigation/>
         <h1>My Astro Site</h1>
         <h2>{pageTitle}</h2>
         <h3>... and my new Astro site!</h3>
