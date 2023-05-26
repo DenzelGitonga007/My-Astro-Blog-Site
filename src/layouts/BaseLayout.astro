@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Navigation from '../components/Navigation.astro';
+// import Navigation from '../components/Navigation.astro';
 import Hambuger from '../components/Hambuger.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 // CSS
 import '../styles/global.css';
 // Receive page title as props
@@ -12,8 +13,9 @@ const {pageTitle} = Astro.props;
 
 <Layout>
 	<main>
+		<Header />
 		<Hambuger />
-		<Navigation />
+		
 		
 		<h1>Welcome to <br><span class="text-gradient">Denzel Astro Site</span></h1>
 		
