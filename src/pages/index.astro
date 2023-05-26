@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+// Get greetings
+import Greeting from '../components/Greeting.jsx';
 import Card from '../components/Card.astro';
 // Get tags
 const allPosts = await Astro.glob('../pages/posts/*.md');
@@ -8,7 +10,8 @@ const pageTitle = "Denzel Astro Site";
 ---
 <title>{pageTitle}</title>
 <BaseLayout>
-	<h2>My awesome blogs</h2>
+	<Greeting client:load messages={["Hey", "Hallo", "Hola", "Habari"]} />
+	<h2>Check out my awesome blogs</h2>
 	<div class="tags">
 		{tags.map((tag) => (
 		  <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
